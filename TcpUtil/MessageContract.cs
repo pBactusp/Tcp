@@ -6,14 +6,25 @@ using System.Threading.Tasks;
 
 namespace TcpUtil
 {
-    public class MessageContractHeader
+    public class ContractHeader
     {
         public int Length { get; internal set; }
+        public MessageDataType Type { get; internal set; }
     }
 
-    public class MessageContract
+    public abstract class Contract
     {
-        public MessageContractHeader Header;
+        public ContractHeader Header;
+    }
+
+    public class MessageContract : Contract
+    {
         public string Message { get; set; }
     }
+
+    public class FileContract : Contract
+    {
+        public string Path { get; set; }
+    }
+    
 }
