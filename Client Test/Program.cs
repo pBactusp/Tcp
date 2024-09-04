@@ -29,6 +29,19 @@ while (!exit)
             exit = true;
             break;
 
+        case "stress test":
+            if (client.IsConnected && message != Environment.NewLine && message != string.Empty)
+            {
+                TsConsole.WriteLine(await client.SendMessage(message));
+                for (int i = 0; i < 1000000; i++)
+                    await client.SendMessage($"{message} no.{i}");
+
+                TsConsole.WriteLineInColor("Stress test completed", ConsoleColor.Cyan);
+            }
+
+
+            break;
+
         default:
             if (client.IsConnected && message != Environment.NewLine && message != string.Empty)
             {

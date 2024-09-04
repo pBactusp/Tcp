@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\TcpClient\TcpClient\TcpClient.csproj" />
     <ProjectReference Include="..\..\ThreadSafeConsole\ThreadSafeConsole\ThreadSafeConsole.csproj" />
+    <ProjectReference Include="..\TcpUtil\TcpUtil.csproj" />
   </ItemGroup>
 
 </Project>
